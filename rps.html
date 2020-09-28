@@ -5,96 +5,20 @@
 	<title>rpc</title>
 </head>
 <body>
-<h1>Правила</h1>
-<p>
-Папір б'є Камінь<br>
-Камінь б'є Ножиці<br>
-Ножиці б'ють Папір<br>
-Гра проти комп'ютера
-</p>
-<h2 id="demo">Вибір машини: </h1>
-<h2 id="demo2">Твій вибір: </h1>
-<button onclick="game(0);">Папір</button>
-<button onclick="game(1);">Ножиці</button>
-<button onclick="game(2);">Камінь</button>
-<h2 id="win">Нічия</h1>
-<h1 id="score"></h1>
-<script>
-let cpu = "Вибір машини: ";
-let human = "Твій вибір: ";
-let Cscore = 0;
-let Pscore = 0;
-let draw = 0;
-let score = document.getElementById("score");
-score.innerHTML = "Машина " + Cscore + "<br>" + "Ти " + Pscore + "<br>" + "Нічия " + draw;;
-function computer() {	
-	let x = Math.floor(Math.random() * 3);
-	switch (x) {
-		case 0: return document.getElementById("demo").innerHTML = cpu + 'Папір';
-			break;
-		case 1: return document.getElementById("demo").innerHTML = cpu + 'Ножиці';
-			break;
-		case 2: return document.getElementById("demo").innerHTML = cpu + 'Камінь';
-			break;
-	}
-}
-
-function playerInput(x) {	
-	switch (x) {
-		case 0: return document.getElementById("demo2").innerHTML = human + 'Папір';
-			break;
-		case 1: return document.getElementById("demo2").innerHTML = human + 'Ножиці';
-			break;
-		case 2: return document.getElementById("demo2").innerHTML = human + 'Камінь';
-			break;
-	}	
-}
-
-function game(asd) {
-	computer();
-	playerInput(asd);
-	const c = document.getElementById("demo").innerHTML;
-	const p = document.getElementById("demo2").innerHTML;
-	let w = document.getElementById("win").innerHTML = "";
-	if ( c === cpu + 'Папір' && p === human + 'Камінь') {
-		w = document.getElementById("win").innerHTML = "Бездушна машина перемогла!";
-		Cscore++;
-		score.innerHTML = "Машина " + Cscore + "<br>" + "Ти " + Pscore + "<br>" + "Нічия " + draw;;
-	}	
-	else if ( c === cpu + 'Ножиці' && p === human + 'Папір' ) {
-		w = document.getElementById("win").innerHTML = "Бездушна машина перемогла!";
-		Cscore++;
-		score.innerHTML = "Машина " + Cscore + "<br>" + "Ти " + Pscore + "<br>" + "Нічия " + draw;;
-	}
-	else if ( c === cpu + 'Камінь' && p === human + 'Ножиці') {
-		w = document.getElementById("win").innerHTML = "Бездушна машина перемогла!";
-		Cscore++;
-		score.innerHTML = "Машина " + Cscore + "<br>" + "Ти " + Pscore + "<br>" + "Нічия " + draw;;
-	}
-	else if ( c.slice(14) === p.slice(12) ) {
-		w = document.getElementById("win").innerHTML = "Нічия!";
-		draw++;
-		score.innerHTML = "Машина " + Cscore + "<br>" + "Ти " + Pscore + "<br>" + "Нічия " + draw;
-	}
-	else {
-		w = document.getElementById("win").innerHTML = "Людина перемогла!";
-		Pscore++;
-		score.innerHTML = "Машина " + Cscore + "<br>" + "Ти " + Pscore + "<br>" + "Нічия " + draw;;
-	}
-}    
-</script>
+	<h1>Правила</h1>
+	<p>
+		Папір б'є Камінь.<br>
+		Камінь б'є Ножиці.<br>
+		Ножиці б'ють Папір.<br>
+		Гра проти комп'ютера.
+	</p>
+	<h2 id="demo">Вибір машини: </h2>
+	<h2 id="demo2">Твій вибір: </h2>
+	<button onclick="game(0);">Папір</button>
+	<button onclick="game(1);">Ножиці</button>
+	<button onclick="game(2);">Камінь</button>
+	<h2 id="win">Нічия</h2>
+	<h1 id="score"></h2>
+	<script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
