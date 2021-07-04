@@ -1,2 +1,3 @@
 # rock-paper-scissors
-this is a rock, paper, scissors game created by Yaroslav Pitsur
+This is a rock, paper, scissors game vs a computer.
+You can try it out at: https://rosgvardstakanchel.glitch.me/
